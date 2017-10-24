@@ -2,7 +2,16 @@
 <html>
 <head>
     <script type="text/javascript">
-      var day;
+    console.log = function(msg) {
+        var ul = document.getElementById("log");
+        var li = document.createElement("li");
+        li.appendChild(document.createTextNode(msg));
+        ul.appendChild(li);
+    }
+
+    window.onload = function() {
+        document.getElementById("run").onclick = function() {
+            var day;
       switch (new Date().getDay()) {
           case 0:
               day = "Sunday";
@@ -26,6 +35,8 @@
               day = "Saturday";
       }
       console.log(day);
+        }
+    }
     </script>
 </head>
 <body>
